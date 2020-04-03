@@ -1,2 +1,3 @@
-# udemy-intro-plane-physics
-Udemy: Intro to Airplane Physics in Unity 3D - 2017 &amp; 2018
+# Intro to Airplane Physics in Unity 3D
+
+https://www.udemy.com/course/intro-to-airplane-physics-in-unity-3d/
