@@ -1,0 +1,73 @@
+{
+    "name": "GameInputs",
+    "maps": [
+        {
+            "name": "Airplane",
+            "id": "586795a1-62c4-4765-9229-5c8212e2a62d",
+            "actions": [
+                {
+                    "name": "Pitch",
+                    "type": "PassThrough",
+                    "id": "f20afcff-2e0b-4a1a-b032-38cb59bd2268",
+                    "expectedControlType": "Double",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Roll",
+                    "type": "PassThrough",
+                    "id": "3e2f6bc0-77ea-412e-ae26-18af59592a06",
+                    "expectedControlType": "Double",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Yaw",
+                    "type": "PassThrough",
+                    "id": "54f1fd35-4c64-4dca-9211-d3945c6c6347",
+                    "expectedControlType": "Double",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Throttle",
+                    "type": "PassThrough",
+                    "id": "45734b21-5aed-4c8f-aaa7-bfa0d61e84ec",
+                    "expectedControlType": "Double",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Flaps",
+                    "type": "PassThrough",
+                    "id": "131be2f9-556d-4172-807b-3446412d68b4",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Brake",
+                    "type": "PassThrough",
+                    "id": "ac6d94f1-8888-43c8-a33c-3496dd4de4d1",
+                    "expectedControlType": "Double",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
