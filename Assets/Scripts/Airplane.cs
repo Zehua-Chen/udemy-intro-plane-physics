@@ -8,7 +8,7 @@ public class Airplane : MonoBehaviour
     float _roll = 0.0f;
     float _yaw = 0.0f;
     float _throttle = 0.0f;
-    int _flaps = 0;
+    float _flaps = 0;
     float _brake;
 
     private void Awake()
@@ -18,8 +18,17 @@ public class Airplane : MonoBehaviour
         _inputs.Airplane.Roll.performed += ctx => _roll = ctx.ReadValue<float>();
         _inputs.Airplane.Yaw.performed += ctx => _yaw = ctx.ReadValue<float>();
         _inputs.Airplane.Throttle.performed += ctx => _throttle = ctx.ReadValue<float>();
-        _inputs.Airplane.Flaps.performed += ctx => _flaps = ctx.ReadValue<int>();
+        _inputs.Airplane.Flaps.performed += ctx =>
+        {
+            _flaps += ctx.ReadValue<float>();
+            _flaps = Mathf.Clamp(_flaps, 0.0f, 3.0f);
+        };
+
         _inputs.Airplane.Brake.performed += ctx => _brake = ctx.ReadValue<float>();
+    }
+
+    private void Update()
+    {
     }
 
     private void OnEnable()

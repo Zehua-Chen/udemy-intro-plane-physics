@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 61c3e91528bf64f68a53e42cde0c8c1a,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -436,7 +436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 61.899994, y: -25}
+  m_AnchoredPosition: {x: 61.899902, y: -25}
   m_SizeDelta: {x: 97.79999, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1186970940
@@ -690,7 +690,7 @@ PrefabInstance:
     - target: {fileID: 5576552503878416577, guid: 37b9d436af7474a11b803cde9f1c9d65,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.67
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 5576552503878416577, guid: 37b9d436af7474a11b803cde9f1c9d65,
         type: 3}

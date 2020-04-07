@@ -62,12 +62,57 @@ public class @GameInputs : IInputActionCollection, IDisposable
                     ""name"": ""Brake"",
                     ""type"": ""PassThrough"",
                     ""id"": ""ac6d94f1-8888-43c8-a33c-3496dd4de4d1"",
-                    ""expectedControlType"": ""Double"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
             ],
-            ""bindings"": []
+            ""bindings"": [
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""a0cd677d-48f9-437a-b8c6-986695e6a827"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pitch"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""b36fe7a2-fd57-4cfd-adfa-f86799483a25"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Pitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""f0d22efd-269f-4023-a5f6-99f36a0fc42b"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Pitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59b76128-0ac2-4cf9-801c-bb979d9f7d72"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
