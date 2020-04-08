@@ -1,5 +1,5 @@
 {
-    "name": "GameInputs",
+    "name": "ProjectInputs",
     "maps": [
         {
             "name": "Airplane",
@@ -98,6 +98,39 @@
                     "action": "Brake",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Keyboard",
+                    "id": "9d6e8caf-c3e2-4e6b-9b6e-042079918d3e",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throttle",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "9d7e11ab-1dc6-4cc3-8ac4-08086fdcf1d8",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throttle",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "e7beb1dd-c31e-4bf0-adfd-0ad942fbb2dc",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throttle",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

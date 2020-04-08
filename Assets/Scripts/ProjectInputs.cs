@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Settings/GameInputs.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Settings/ProjectInputs.inputactions'
 
 using System;
 using System.Collections;
@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class @GameInputs : IInputActionCollection, IDisposable
+public class @ProjectInputs : IInputActionCollection, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @GameInputs()
+    public @ProjectInputs()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""GameInputs"",
+    ""name"": ""ProjectInputs"",
     ""maps"": [
         {
             ""name"": ""Airplane"",
@@ -111,6 +111,39 @@ public class @GameInputs : IInputActionCollection, IDisposable
                     ""action"": ""Brake"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""9d6e8caf-c3e2-4e6b-9b6e-042079918d3e"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throttle"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""9d7e11ab-1dc6-4cc3-8ac4-08086fdcf1d8"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throttle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""e7beb1dd-c31e-4bf0-adfd-0ad942fbb2dc"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throttle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -194,8 +227,8 @@ public class @GameInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Airplane_Brake;
     public struct AirplaneActions
     {
-        private @GameInputs m_Wrapper;
-        public AirplaneActions(@GameInputs wrapper) { m_Wrapper = wrapper; }
+        private @ProjectInputs m_Wrapper;
+        public AirplaneActions(@ProjectInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Pitch => m_Wrapper.m_Airplane_Pitch;
         public InputAction @Roll => m_Wrapper.m_Airplane_Roll;
         public InputAction @Yaw => m_Wrapper.m_Airplane_Yaw;
