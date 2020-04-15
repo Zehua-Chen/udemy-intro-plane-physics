@@ -54,6 +54,7 @@ public class AirplaneControl : MonoBehaviour
         this.Pitch();
         this.Roll();
         this.Yaw();
+        this.Bank();
     }
 
     private void OnEnable()
@@ -96,7 +97,7 @@ public class AirplaneControl : MonoBehaviour
         right.y = 0.0f;
         right = right.normalized;
 
-        this.RollAngle = Vector3.Angle(right, this.transform.right);
+        this.RollAngle = Vector3.SignedAngle(right, this.transform.right, transform.forward);
 
         Vector3 rollTorque = this.transform.forward
             * _inputs.Airplane.Roll.ReadValue<float>() * _rollSpeed;
@@ -110,5 +111,14 @@ public class AirplaneControl : MonoBehaviour
             * _inputs.Airplane.Yaw.ReadValue<float>() * _yawSpeed;
 
         _rigidbody.AddTorque(yawTorque);
+    }
+
+    private void Bank()
+    {
+        float bank = Mathf.InverseLerp(-90.0f, 90.0f, this.RollAngle);
+        float bankValue = Mathf.Lerp(-1.0f, 1.0f, bank);
+
+        Vector3 bankTorque = bankValue * -1 * _rollSpeed * Vector3.up;
+        _rigidbody.AddTorque(bankTorque);
     }
 }
