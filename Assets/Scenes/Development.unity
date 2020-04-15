@@ -594,96 +594,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _maxForce
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[0].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[1].inWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[1].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[2].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[2].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[0].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[0].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[1].tangentMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[0].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2609164071770033852, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _powerCurve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4354217577308401457, guid: 37b9d436af7474a11b803cde9f1c9d65,
-        type: 3}
-      propertyPath: _throttleSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5576552503878416576, guid: 37b9d436af7474a11b803cde9f1c9d65,
         type: 3}
       propertyPath: m_Name
@@ -744,5 +654,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7825636817847890508, guid: 37b9d436af7474a11b803cde9f1c9d65, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 37b9d436af7474a11b803cde9f1c9d65, type: 3}

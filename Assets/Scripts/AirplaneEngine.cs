@@ -2,6 +2,7 @@
 
 public class AirplaneEngine : MonoBehaviour
 {
+    [Header("Engine Properties")]
     [SerializeField]
     float _maxForce = 200.0f;
     [SerializeField]
@@ -16,6 +17,13 @@ public class AirplaneEngine : MonoBehaviour
     [SerializeField]
     float _throttle = 0.0f;
 
+    [SerializeField]
+    Rigidbody _rigidbody = null;
+
+    [Header("Propeller")]
+    [SerializeField]
+    AirplanePropeller _propeller = null;
+
     public float Throttle
     {
         get
@@ -28,13 +36,14 @@ public class AirplaneEngine : MonoBehaviour
         }
     }
 
-    [SerializeField]
-    Rigidbody _rigidbody = null;
-
     private void FixedUpdate()
     {
-        float power = _maxForce * _powerCurve.Evaluate(_throttle / _maxThrottle);
+        float finalThrottle = _powerCurve.Evaluate(_throttle / _maxThrottle);
+        float power = _maxForce * finalThrottle;
         Vector3 force = this.transform.forward * power;
+
+        float currentRPM = _maxRPM * finalThrottle;
+        _propeller.RotatePropeller(currentRPM, Time.deltaTime);
 
         _rigidbody.AddForceAtPosition(force, this.transform.position);
     }
