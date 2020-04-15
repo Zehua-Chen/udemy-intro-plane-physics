@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class AirplaneControl : MonoBehaviour
 {
     [SerializeField]
@@ -11,21 +12,29 @@ public class AirplaneControl : MonoBehaviour
     [SerializeField]
     float _throttleSpeed = 20.0f;
 
+    [SerializeField]
+    float _pitchSpeed = 1500.0f;
+
+    [SerializeField]
+    float _rollSpeed = 1500.0f;
+
+    [SerializeField]
+    float _yawSpeed = 1500.0f;
+
     ProjectInputs _inputs = null;
 
-    float _pitch = 0.0f;
-    float _roll = 0.0f;
-    float _yaw = 0.0f;
     float _flaps = 0;
     float _brake;
+    Rigidbody _rigidbody = null;
+
+    public float PitchAngle { get; private set; } = 0.0f;
+    public float RollAngle { get; private set; } = 0.0f;
 
     private void Awake()
     {
-        _inputs = new ProjectInputs();
-        _inputs.Airplane.Pitch.performed += ctx => _pitch = ctx.ReadValue<float>();
-        _inputs.Airplane.Roll.performed += ctx => _roll = ctx.ReadValue<float>();
-        _inputs.Airplane.Yaw.performed += ctx => _yaw = ctx.ReadValue<float>();
+        _rigidbody = GetComponent<Rigidbody>();
 
+        _inputs = new ProjectInputs();
         _inputs.Airplane.Flaps.performed += ctx =>
         {
             _flaps += ctx.ReadValue<float>();
@@ -38,6 +47,13 @@ public class AirplaneControl : MonoBehaviour
     private void Update()
     {
         this.UpdateThrottle();
+    }
+
+    private void FixedUpdate()
+    {
+        this.Pitch();
+        this.Roll();
+        this.Yaw();
     }
 
     private void OnEnable()
@@ -58,5 +74,41 @@ public class AirplaneControl : MonoBehaviour
         {
             _engines[i].Throttle += throttleDelta;
         }
+    }
+
+    private void Pitch()
+    {
+        Vector3 forward = transform.forward;
+        forward.y = 0.0f;
+        forward = forward.normalized;
+
+        this.PitchAngle = Vector3.Angle(forward, this.transform.forward);
+
+        Vector3 pitchTorque = this.transform.right
+            * _inputs.Airplane.Pitch.ReadValue<float>() * _pitchSpeed;
+
+        _rigidbody.AddTorque(pitchTorque);
+    }
+
+    private void Roll()
+    {
+        Vector3 right = transform.right;
+        right.y = 0.0f;
+        right = right.normalized;
+
+        this.RollAngle = Vector3.Angle(right, this.transform.right);
+
+        Vector3 rollTorque = this.transform.forward
+            * _inputs.Airplane.Roll.ReadValue<float>() * _rollSpeed;
+
+        _rigidbody.AddTorque(rollTorque);
+    }
+
+    private void Yaw()
+    {
+        Vector3 yawTorque = this.transform.up
+            * _inputs.Airplane.Yaw.ReadValue<float>() * _yawSpeed;
+
+        _rigidbody.AddTorque(yawTorque);
     }
 }
