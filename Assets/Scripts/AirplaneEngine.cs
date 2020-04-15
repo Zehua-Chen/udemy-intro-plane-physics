@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class AirplaneEngine : MonoBehaviour
 {
     [Header("Engine Properties")]
@@ -17,12 +18,11 @@ public class AirplaneEngine : MonoBehaviour
     [SerializeField]
     float _throttle = 0.0f;
 
-    [SerializeField]
-    Rigidbody _rigidbody = null;
-
     [Header("Propeller")]
     [SerializeField]
     AirplanePropeller _propeller = null;
+
+    Rigidbody _rigidbody = null;
 
     public float Throttle
     {
@@ -36,6 +36,11 @@ public class AirplaneEngine : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+
     private void FixedUpdate()
     {
         float finalThrottle = _powerCurve.Evaluate(_throttle / _maxThrottle);
@@ -45,6 +50,6 @@ public class AirplaneEngine : MonoBehaviour
         float currentRPM = _maxRPM * finalThrottle;
         _propeller.RotatePropeller(currentRPM, Time.deltaTime);
 
-        _rigidbody.AddForceAtPosition(force, this.transform.position);
+        _rigidbody.AddForce(force);
     }
 }
